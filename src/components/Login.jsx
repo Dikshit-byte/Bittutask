@@ -1,12 +1,23 @@
-import React from "react";
+import React,{useState} from "react";
 import "./Login.css";
+import users from "../local-json/users";
+
 function Login() {
+    
     const inputRef = React.useRef(null);
     const passRef = React.useRef(null);
 
+    // console.table(users);
     const handleClick = ()=>{
         console.log(inputRef.current.value);
         console.log(passRef.current.value);
+        for(let i=0; i<users.length; i++){
+          if(inputRef.current.value === users[i].username){
+            if(passRef.current.value === users[i].password){
+              console.log(true);
+            }
+          }
+        }
     }
   return (
     <>
@@ -16,9 +27,8 @@ function Login() {
             <span className="material-icons">Lock</span>
             <input
               type="text"
-              placeholder="email"
+              placeholder="Username"
               required
-              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
               ref={inputRef}
             />
             <input 

@@ -6,7 +6,6 @@ function ApiFetch() {
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
     const dataFetchRef = useRef(false);
-    const num = useRef(1);
     // useEffect(() => {
     //       console.log("i fire "+crypto.randomUUID());
     //   fetch("https://raw.githubusercontent.com/syook/react-dishpoll/main/db.json")
@@ -31,7 +30,7 @@ function ApiFetch() {
     // }, []);
   
     const fetchData = () => {
-      console.log("i fire " + num.current++);
+      console.log("i fire " + crypto.randomUUID());
       fetch("https://raw.githubusercontent.com/syook/react-dishpoll/main/db.json")
         .then((response) => {
           if (response.ok) {
