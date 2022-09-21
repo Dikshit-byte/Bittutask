@@ -30,7 +30,7 @@ function ApiFetch() {
     // }, []);
   
     const fetchData = () => {
-      console.log("i fire " + crypto.randomUUID());
+      // console.log("i fire " + crypto.randomUUID());
       fetch("https://raw.githubusercontent.com/syook/react-dishpoll/main/db.json")
         .then((response) => {
           if (response.ok) {
@@ -40,12 +40,12 @@ function ApiFetch() {
         })
         .then((data) => {
           setData(data);
-          console.log(data);
+          // console.log(data);
         })
         .catch((error) => {
-          console.error("Error Fetching data :", data);
+          console.error("Error Fetching data :", error);
           setError(error);
-          console.log("Error happend! We're extremely sorry for that");
+          // console.log("Error happend! We're extremely sorry for that");
         })
         .finally(() => {
           setLoading(false);
@@ -55,7 +55,6 @@ function ApiFetch() {
       if (dataFetchRef.current) return;
       dataFetchRef.current = true;
       fetchData();
-      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
   
     if (loading) return "Loading...";

@@ -3,7 +3,7 @@ import { FaPlay } from "react-icons/fa";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import Loader from "../utils/Loader";
 
-export default function Card(props) {
+export default function Card(props){
   const {image,dish,description} = props;
   const [load, setLoad] = useState(true);
 
@@ -46,4 +46,4 @@ export default function Card(props) {
       </div>
     </div>
   );
-}
+          }
