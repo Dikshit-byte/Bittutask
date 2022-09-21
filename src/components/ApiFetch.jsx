@@ -64,8 +64,8 @@ function ApiFetch() {
       <div className="flex flex-row flex-wrap">
         {data &&
           data.length > 0 &&
-          data.map((data, id) => {
-            const {dishName,description,image} = data;
+          data.map((data) => {
+            const {dishName,description,image,id} = data;
             return (
               <div key={id}>
                 {/* <div key={id}>{data.dishName} - {data.description} - {data.image}</div> */}

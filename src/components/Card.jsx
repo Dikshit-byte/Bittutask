@@ -9,7 +9,7 @@ export default function Card(props){
 
   setTimeout(()=>{
     setLoad(false);
-  },300);
+  },100);
   console.log("State changed!");
   return (
     <div className="md:w-[45rem] md:h-[20rem] w-[20.5rem] h-[40rem] p-12 rounded-2xl bg-white dark:bg-slate-800 shadow-xl dark:shadow-slate-800 flex flex-row ease-linear duration-300 md:flex-row-reverse my-2 mb-2 ml-5">
