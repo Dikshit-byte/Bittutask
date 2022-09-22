@@ -40,7 +40,7 @@ export default function Card(props) {
       </div>
 
       <div className=" h-full w-full mr-2 rounded-2xl ">
-        <h3 className="m-2 font-bold pl-1 text-lg text-[#5865F2]">{dish}</h3>
+        <h3 className="m-2 font-bold pl-1 text-lg text-[#5865F2] z-10">{dish}</h3>
         <h1 className="m-2 text-1.5xl font-bold text-black">{description}</h1>
 
         <div className="flex flex-row bottom-0.5">
