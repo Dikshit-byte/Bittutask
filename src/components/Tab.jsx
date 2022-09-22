@@ -17,7 +17,7 @@ function Tab() {
             <img src="https://img.icons8.com/ios/50/9CA3AF/vertical-line.png" alt="icons" className='h-20 relative'/>
         <div className="md:text-4xl mr-20 p-4 pr-20 cursor-pointer text-white" onClick={()=>setChange(false)}>Rating</div>
     </div>
-        {(change)?<ApiFetch/>:<Rating/>}
+        {(change)?<ApiFetch/>:<Rating/>}lk
        </>: <Login logg={logg}/>}
     </div>
   )
