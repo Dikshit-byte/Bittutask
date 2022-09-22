@@ -11,10 +11,10 @@ export default function Card(props) {
   const { image, dish, description } = props;
   const [load, setLoad] = useState(true);
   const [value, setValue] = useState(null);
-  console.log(value);
+  // console.log(value);
   // console.log(countRef.current);
 
-  console.log(global.counter);
+  // console.log(global.counter);
   setTimeout(() => {
     setLoad(false);
   }, 100);

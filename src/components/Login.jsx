@@ -10,8 +10,8 @@ function Login({logg}) {
     // console.table(users);
     const handleClick = (e)=>{
       e.preventDefault();
-        console.log(inputRef.current.value);
-        console.log(passRef.current.value);
+        // console.log(inputRef.current.value);
+        // console.log(passRef.current.value);
         for(let i=0; i<users.length; i++){
           const {username,password} = users[i];
           if(inputRef.current.value === username){
@@ -24,7 +24,7 @@ function Login({logg}) {
           setStatus(false);
         }
     }
-    console.log(status);
+    // console.log(status);
   return (
     <>
       <div className="login">
