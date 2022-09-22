@@ -3,6 +3,7 @@ import React, { useState } from "react";
 // import Login from './components/Login';
 import Tab from "./components/Tab";
 // import Alert from "./components/Alert";
+import Data from "./components/Data";
 
 function App() {
   // const [loggedIn, setLoggedIn] = useState(false);
@@ -13,6 +14,7 @@ function App() {
   return (
     <>
       <Tab />
+      {/* <Data/> */}
       {/* <Alert/> */}
     </>
   );

@@ -22,7 +22,7 @@ export default function Card(props) {
   return (
     <div className="md:w-[45rem] md:h-[20rem] w-[20.5rem] h-[40rem] p-12 rounded-2xl bg-white dark:bg-slate-800 shadow-xl dark:shadow-slate-800 flex flex-row ease-linear duration-300 md:flex-row-reverse my-2 mb-2 ml-5">
       <div className=" h-full w-full shadow-md rounded-2xl basis-2/3 relative">
-        <div className=" text-white z-10 bg-[#5865F2] absolute pl-8 pr-8 pb-2 pt-2  rounded-tl-2xl rounded-br-2xl font-semibold">
+        <div className=" text-white z-10 bg-[#5865F2] absolute pl-8 pr-8 pb-2 pt-2 rounded-tl-2xl rounded-br-2xl font-semibold">
           <h1>DISH</h1>
         </div>
         <div className="h-full w-full relative border-2 border-white rounded-2xl">
