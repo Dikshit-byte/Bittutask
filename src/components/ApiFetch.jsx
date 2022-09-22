@@ -51,6 +51,7 @@ function ApiFetch() {
           setLoading(false);
         });
     };
+    console.log(data);
     useEffect(() => {
       if (dataFetchRef.current) return;
       dataFetchRef.current = true;

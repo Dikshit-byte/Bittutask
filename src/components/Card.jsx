@@ -1,16 +1,23 @@
-import {React,useState} from "react";
-import { FaPlay } from "react-icons/fa";
+import {React,useRef,useState} from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import Loader from "../utils/Loader";
+import Box from '@mui/material/Box';
+// import Typography from '@mui/material/Typography';
+import Rating from '@mui/material/Rating';
 
 export default function Card(props){
+  const countRef = useRef(3);
   const {image,dish,description} = props;
   const [load, setLoad] = useState(true);
+  const [value, setValue] = useState(null);
+  // console.log(value);
 
+  console.log(countRef.current);
   setTimeout(()=>{
     setLoad(false);
   },100);
-  console.log("State changed!");
+  // console.log("State changed!");
+
   return (
     <div className="md:w-[45rem] md:h-[20rem] w-[20.5rem] h-[40rem] p-12 rounded-2xl bg-white dark:bg-slate-800 shadow-xl dark:shadow-slate-800 flex flex-row ease-linear duration-300 md:flex-row-reverse my-2 mb-2 ml-5">
       <div className=" h-full w-full shadow-md rounded-2xl basis-2/3 relative">
@@ -30,18 +37,34 @@ export default function Card(props){
           )}
         </div>
       </div>
-
+      
       <div className=" h-full w-full mr-2 rounded-2xl ">
-        <p className="m-2 font-bold pl-1 text-lg text-[#5865F2]">{dish}</p>
+        <h3 className="m-2 font-bold pl-1 text-lg text-[#5865F2]">{dish}</h3>
         <h1 className="m-2 text-1.5xl font-bold text-black">{description}</h1>
 
-        <div className="flex flex-row">
-          <button className="md:m-2 m-auto mt-8 bg-[#5865F2] shadow-md shadow-[#5865f28a]  pt-2 pb-2 pl-6 pr-4 rounded-xl flex flex-row justify-center items-center hover:bg-[#424bb6] ease-linear duration-300">
-            <FaPlay className="animate-ping" size={10} color="#fff" />
-            <h1 className="text-white text-md font-semibold pl-2">
-              Click on it
-            </h1>
-          </button>
+        <div className="flex flex-row bottom-0.5">
+          <div className="md:m-2 mb-0 bg-[#5865F2] shadow-md shadow-[#5865f28a]  pt-2 pb-2 pl-6 pr-4 rounded-xl flex flex-row justify-center items-center ease-linear duration-300">
+            <span className="text-white text-md font-semibold pl-2 ">
+              Enter your rating from 1 to 3
+            </span><br/>
+            <Box
+      sx={{
+        '& > legend': { mt: 2 },
+      }}
+      className="pt-1"
+    >
+      {<Rating
+        name="simple-controlled"
+        value={value}
+        max={3}
+        onChange={(event,newValue) => {
+          setValue(newValue);
+        }}
+        onClick={()=>countRef.current--}
+        disabled={(value)?true:false}
+      />}
+    </Box>
+          </div>
         </div>
       </div>
     </div>
