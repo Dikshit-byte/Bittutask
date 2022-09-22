@@ -69,7 +69,7 @@ export default function Card(props) {
                 />
               )}
             </Box>
-            <Alert />
+            {!global.counter && <Alert/>}
           </div>
         </div>
       </div>
