@@ -1,4 +1,4 @@
-const fetch = require("node-fetch");
+import fetch from "node-fetch";
 async function getResponse(feedingData) {
     const data = await fetch("https://api.github.com/users/dikshit-byte/repos");
     try {
@@ -15,8 +15,6 @@ function feedingData(data) {
     })
 }
 
-getResponse(feedingData);
-
 async function getCommit(repo_name) {
     const commitData = await fetch(`https://api.github.com/repos/dikshit-byte/${repo_name}/commits`);
     try {
@@ -28,8 +26,9 @@ async function getCommit(repo_name) {
 }
 
 function feedCommit(repo_commit) {
-    console.log("Commit is : " + repo_commit[0].sha);
+    // console.log("Commit is : " + repo_commit[0]);
     repo_commit.map((data)=>{
         console.log(`Repository last_commit_sha : ${data.sha}\nRepository last_commit_message : ${data.message}`)
     })
 }
+getResponse(feedingData);
