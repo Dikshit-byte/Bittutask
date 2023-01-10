@@ -14,5 +14,14 @@ async function getResponse(feedingData){
         console.log("Error : ",err);    
     }
 }
+async function getCommit(repo_name){ 
+    const data = await fetch(`https://api.github.com/repos/freeCodeCamp/${repo_name}/commits`);
+    try{
+    let response = await data.json();
+    feedingData(response);
+    }catch(err){
+        console.log("Error : ",err);    
+    }
+}
 
 getResponse(feedingData);
